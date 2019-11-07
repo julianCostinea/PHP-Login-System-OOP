@@ -1,5 +1,5 @@
 <?php 
-	require_once 'core/init.php'
-
-	echo Config::get('mysql/host');
+	require_once 'core/init.php';
+	
+	DB::getInstance();
  ?>
