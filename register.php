@@ -26,9 +26,11 @@
 		));
 
 		if ($validation->passed()) {
-			//register user
+			echo 'Passed';
 		}else{
-			//output error
+			foreach ($validation->errors() as $error) {
+				echo $error. '<br>';
+			}
 		}
 	}
  ?>
@@ -36,7 +38,7 @@
 <form action="" method="post">
 	<div class="field">
 		<label for="username">Username</label>
-		<input type="text" name="username" id="username" value="" autocomplete="off">
+		<input type="text" name="username" id="username" value="<?php echo escape(Input::get('username')); ?>" autocomplete="off">
 	</div>
 	<div class="field">
 		<label for="password">Choose a password</label>
@@ -48,7 +50,7 @@
 	</div>
 	<div class="field">
 		<label for="name">Enter your name</label>
-		<input type="text" name="name" id="name" value="">
+		<input type="text" name="name" id="name" value="<?php echo escape(Input::get('name')); ?>">
 	</div>
 
 	<input type="submit" name="submit" value="Register">
