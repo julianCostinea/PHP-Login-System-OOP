@@ -1,8 +1,9 @@
 <?php 
 	require_once 'core/init.php';
-	
-	$user= DB::getInstance()->update('users', 4, array(
-		'password'=>'newpassword',
-		'name'=> 'Dale Garett'
-	));
- ?>
+
+	if (Session::exists('home')) {
+		echo Session::flash('home');
+	}
+
+	echo Session::get(Config::get('session/session_name'));
+?>
