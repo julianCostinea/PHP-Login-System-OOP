@@ -43,7 +43,7 @@
 				die($e->getMessage());
 			}
 			Session::flash('home', 'You registered successfully!');
-			Redirect::to(404);
+			Redirect::to('index.php');
 		}else{
 			foreach ($validation->errors() as $error) {
 				echo $error. '<br>';
