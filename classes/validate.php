@@ -30,20 +30,20 @@
 								break;
 							case 'matches':
 								if ($value!=$source[$rule_value]) {
-									$this->addError("{$item} must be same as {$rule_value}.");
+									$this->addError("{$item} must be same as {$rule_value}");
 								}
 								break;
 							case 'unique':
 								$check=$this->_db->get($rule_value, array($item, '=', $value));
 								if ($check->count()) {
-									$this->addError("{$item} already exists.");
+									$this->addError("{$item} already exists");
 								}
 								break;	
 							case 'required':
 								
 								break;	
 							default:
-								echo "cant find rule";
+								echo "Default rule validation fail";
 								break;
 						}
 					}
