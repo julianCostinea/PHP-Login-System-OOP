@@ -12,7 +12,7 @@ class User {
 		if(!$user) {
 			if(Session::exists($this->_sessionName)) {
 				$user = Session::get($this->_sessionName);
-				// echo $user;
+				//echo $user;
 				if($this->find($user)) {
 					$this->_isLoggedIn = true;
 				} else {
